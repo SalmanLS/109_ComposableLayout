@@ -95,7 +95,8 @@ fun TampilLayar(pesan: String, dari: String) {
         )
         TampilText(
             massage = pesan,
-            from = dari
+            from = dari,
+            modifier = Modifier.fillMaxSize() .padding(8.dp)
         )
     }
 
