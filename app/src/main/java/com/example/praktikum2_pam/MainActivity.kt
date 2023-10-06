@@ -43,12 +43,27 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    Praktikum2_PAMTheme {
+        TampilText(massage = "Selamat Malam", from = "dari UMY")
+    }
+}
 
 @Composable
-fun TampilText(massage: String, from: String, modifier: Modifier = Modifier) {
+fun TampilText(massage: String, from: String, modifier:Modifier = Modifier){
     Column(
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier
+        modifier = modifier
     ) {
         Text(
             color = Color.Blue,
@@ -80,19 +95,10 @@ fun TampilLayar(pesan: String, dari: String) {
         )
         TampilText(
             massage = pesan,
-            from = dari,
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(8.dp)
+            from = dari
         )
     }
 
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Praktikum2_PAMTheme {
 
-    }
-}
